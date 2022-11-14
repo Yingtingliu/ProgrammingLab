@@ -15,7 +15,7 @@ public class JustShowFrame extends JFrame
    public static void main(String [] args)
    {
       JustShowFrame frame = new JustShowFrame();
-      //frame.setVisible(true);
+      frame.setVisible(true);
    }
 }
 
