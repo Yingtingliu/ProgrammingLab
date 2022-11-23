@@ -28,8 +28,6 @@ public class test {
 				negcount++;
 			}
 			
-			//odd number
-			
 			System.out.println("possum: "+possum+", overflow: " + overflow + ", negcount: " + negcount + ", oddCount: " + oddCount);
 
 		}
