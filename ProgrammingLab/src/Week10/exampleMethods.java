@@ -154,15 +154,19 @@ public class exampleMethods {
 
 	public static ArrayList<String> permutations(String s) {
 		ArrayList<String> resultsList = new ArrayList<String>();
-		if(s.length()==1) resultsList.add(s);
+		if(s.length()==1) resultsList.add(s);		
 		for (int i = 0; i < s.length(); i++) {
 			String shortString;
 			String tempWord;
 			shortString = s.substring(0,i) + s.substring(i+1,s.length());
+			System.out.println("1"+s.substring(0,i));
+			System.out.println("2"+s.substring(i+1,s.length()));
 			ArrayList<String> shortResultsList = permutations(shortString);
+			System.out.println("3"+shortResultsList);
 			for (String tempString : shortResultsList) {
 				tempWord = s.charAt(i) + tempString;
 				resultsList.add(tempWord);
+				System.out.println("4"+tempWord);
 			}
 		}
 
@@ -194,33 +198,33 @@ public class exampleMethods {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("" + power1(2, 10));
-		System.out.println("" + power2(2, 10));
-		int n = 3;
-		System.out.println("The " + n + "th " + " triangle number is "
-				+ triangle2(n));
-		n = 6;
-		System.out.println("The " + n + "th " + " triangle number is "
-				+ triangle2(n));
-		n = 4;
-		System.out.println("" + n + " factorial is " + factorial2(n));
-		n = 10;
-		System.out.println("" + n + " factorial is " + factorial2(n));
+//		System.out.println("" + power1(2, 10));
+//		System.out.println("" + power2(2, 10));
+//		int n = 3;
+//		System.out.println("The " + n + "th " + " triangle number is "
+//				+ triangle2(n));
+//		n = 6;
+//		System.out.println("The " + n + "th " + " triangle number is "
+//				+ triangle2(n));
+//		n = 4;
+//		System.out.println("" + n + " factorial is " + factorial2(n));
+//		n = 10;
+//		System.out.println("" + n + " factorial is " + factorial2(n));
 
 		//System.out.println(permutations4("bark"));
 		//System.out.println(permutations5("pinky"));
 		//System.out.println(permutations3("bar"));
 		
-		//System.out.println(permutations("abcdefghj"));
+		System.out.println(permutations("abc"));
 		//permutations("abcdefghijklmno");
 		//System.out.println("Program finished");
-		String[] myStringArray = {"aardvark", "badger", "bat", "cat", "dog", "elephant", "fox", "monkey"};
-		int pos = binarySearch(myStringArray, "dog", 0, 7);
-		if(pos==-1) System.out.println("Dog not found");
-		else System.out.println("Dog found at position " + pos);
-		pos = binarySearch(myStringArray, "fish", 0, 7);
-		if(pos==-1) System.out.println("Fish not found");
-		else System.out.println("Fish found at position " + pos);
+//		String[] myStringArray = {"aardvark", "badger", "bat", "cat", "dog", "elephant", "fox", "monkey"};
+//		int pos = binarySearch(myStringArray, "dog", 0, 7);
+//		if(pos==-1) System.out.println("Dog not found");
+//		else System.out.println("Dog found at position " + pos);
+//		pos = binarySearch(myStringArray, "fish", 0, 7);
+//		if(pos==-1) System.out.println("Fish not found");
+//		else System.out.println("Fish found at position " + pos);
 		
 		
 	}
