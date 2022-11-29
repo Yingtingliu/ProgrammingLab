@@ -49,7 +49,8 @@ public class week10lab_Q3 {
 	}
 	
 	
-	
+	// Generate all the binary strings of N bits
+	// https://www.geeksforgeeks.org/generate-all-the-binary-strings-of-n-bits/
 	static void printTheArray(int arr[], int n)
 	{
 	    for (int i = 0; i < n; i++)
