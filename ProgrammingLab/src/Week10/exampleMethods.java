@@ -159,14 +159,14 @@ public class exampleMethods {
 			String shortString;
 			String tempWord;
 			shortString = s.substring(0,i) + s.substring(i+1,s.length());
-			System.out.println("1"+s.substring(0,i));
-			System.out.println("2"+s.substring(i+1,s.length()));
+//			System.out.println("1"+s.substring(0,i));
+//			System.out.println("2"+s.substring(i+1,s.length()));
 			ArrayList<String> shortResultsList = permutations(shortString);
-			System.out.println("3"+shortResultsList);
+//			System.out.println("3"+shortResultsList);
 			for (String tempString : shortResultsList) {
 				tempWord = s.charAt(i) + tempString;
 				resultsList.add(tempWord);
-				System.out.println("4"+tempWord);
+//				System.out.println("4"+tempWord);
 			}
 		}
 
@@ -189,8 +189,13 @@ public class exampleMethods {
 			   i=(start+end)/2;
 			   System.out.println("and i is " + i);
 			   if(stringArray[i].equals(val)) return i;
+			   
 			   else{
-				   if(stringArray[i].compareTo(val)<0) return binarySearch(stringArray, val,i+1,end);
+				   if(stringArray[i].compareTo(val)<0) {
+
+					   return binarySearch(stringArray, val,i+1,end);
+				   }
+				   
 				   else return binarySearch(stringArray,val,start,i-1);
 			   }
 		    }
@@ -215,14 +220,14 @@ public class exampleMethods {
 		//System.out.println(permutations5("pinky"));
 		//System.out.println(permutations3("bar"));
 		
-		System.out.println(permutations("abc"));
+//		System.out.println(permutations("abc"));
 		//permutations("abcdefghijklmno");
 		//System.out.println("Program finished");
-//		String[] myStringArray = {"aardvark", "badger", "bat", "cat", "dog", "elephant", "fox", "monkey"};
-//		int pos = binarySearch(myStringArray, "dog", 0, 7);
-//		if(pos==-1) System.out.println("Dog not found");
-//		else System.out.println("Dog found at position " + pos);
-//		pos = binarySearch(myStringArray, "fish", 0, 7);
+		String[] myStringArray = {"aardvark", "badger", "bat", "cat", "dog", "elephant", "fox", "monkey"};
+		int pos = binarySearch(myStringArray, "dog", 0, 7);
+		if(pos==-1) System.out.println("Dog not found");
+		else System.out.println("Dog found at position " + pos);
+		pos = binarySearch(myStringArray, "fish", 0, 7);
 //		if(pos==-1) System.out.println("Fish not found");
 //		else System.out.println("Fish found at position " + pos);
 		
