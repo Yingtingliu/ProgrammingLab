@@ -1,5 +1,7 @@
 package AP_Lab2;
 
+import org.junit.jupiter.api.Test;
+
 public class Dog extends Pet{
 	
 	private String breed;
@@ -13,6 +15,7 @@ public class Dog extends Pet{
 		this.favouriteToy = favouriteToy;
 	}
 	
+	@Test
 	public String provideBone() {
 		return name + " says thanks for the bone!";
 	}
