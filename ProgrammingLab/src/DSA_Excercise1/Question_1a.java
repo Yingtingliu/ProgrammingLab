@@ -1,5 +1,8 @@
 package DSA_Excercise1;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.Test;
 
 /**
  * 1A Use Euclid’s GCD algorithm to find the GCDs of the following pairs of
@@ -14,6 +17,22 @@ package DSA_Excercise1;
 public class Question_1a {
 
 	
+	public  int getGcd(int m, int n) {
+		int p = m;
+		int q = n;
+		while(p%q!=0) {
+			int r = p%q;
+			p= q;
+			q= r;			
+		}		
+		return q;
+	}
 	
+	@Test
+	public void test() {
+		Question_1a a = new Question_1a();
+		int result1 = a.getGcd(270, 192);
+		assertEquals(result1, 6);
+	}
 
 }
