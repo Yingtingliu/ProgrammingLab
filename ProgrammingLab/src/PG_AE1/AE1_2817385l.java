@@ -20,6 +20,7 @@ Non task-specific marks:
  - Clear code commenting [1 mark]
  - Use of correct Java variable and method naming conventions [1 mark]
 */
+package PG_AE1;
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
