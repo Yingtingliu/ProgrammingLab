@@ -10,4 +10,7 @@ local.properties
 .loadpath
 .recommenders
 *.class
-*.classpath
+.classpath
+.project
+.settings/
+target/
