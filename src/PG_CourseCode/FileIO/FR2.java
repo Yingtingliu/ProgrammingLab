@@ -1,4 +1,4 @@
-package CourseCode.FileIO;
+package PG_CourseCode.FileIO;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

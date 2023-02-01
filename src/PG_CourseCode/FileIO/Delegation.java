@@ -1,4 +1,4 @@
-package CourseCode.FileIO;
+package PG_CourseCode.FileIO;
 
 import java.util.Random;
 public class Delegation {

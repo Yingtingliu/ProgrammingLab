@@ -25,12 +25,12 @@ public class PetTest {
 		System.out.println(	((Dog) petArray.get(1)).provideBone());
 	}	
 	
-//	@Test
-//	void test() {
-//		Dog d1 = new Dog("apple", 0, null, null, "cool");
-//		String aString = d1.provideBone();
-////		assertEquals(aString, "123");
-//		assertEquals(aString, "apple says thanks for the bone!");
-//		
-//	}
+	@Test
+	void test() {
+		Dog d1 = new Dog("apple", 0, null, null, "cool");
+		String aString = d1.provideBone();
+//		assertEquals(aString, "123");
+		assertEquals(aString, "apple says thanks for the bone!");
+		
+	}
 }

@@ -14,11 +14,11 @@ public class Dog extends Pet{
 		this.furColour = furColour;
 		this.favouriteToy = favouriteToy;
 	}
-//	
-//	@Test
-//	public String provideBone() {
-//		return name + " says thanks for the bone!";
-//	}
+	
+	@Test
+	public String provideBone() {
+		return name + " says thanks for the bone!";
+	}
 	
 	//overload
 	public String toString(String breed, String furColour, String favouriteToy) {
