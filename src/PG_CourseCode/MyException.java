@@ -1,4 +1,4 @@
-package PG_CourseCode.FileIO;
+package PG_CourseCode;
 
 
 public class MyException extends Exception {

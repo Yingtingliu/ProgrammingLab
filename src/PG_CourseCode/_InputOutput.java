@@ -1,4 +1,4 @@
-package PG_CourseCode.FileIO;
+package PG_CourseCode;
 
 import java.io.FileReader;
 import java.io.IOException;
