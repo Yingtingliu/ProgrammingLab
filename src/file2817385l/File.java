@@ -1,3 +1,8 @@
+/* 
+ * This is a file system design using Composite Pattern.
+ * This is a leaf class.
+ * */
+
 package file2817385l;
 
 public class File implements Component{
@@ -6,8 +11,13 @@ public class File implements Component{
     private int size;
 
     public File(String name, int size) {
-        this.name = name;
-        this.size = size;
+        // check legal instance for creating a new file.
+        if (size > 0 && name != null) {
+        	this.name = name;
+            this.size = size;
+        } else {
+            throw new IllegalArgumentException("Error: File size must be greater than 0, and must give a name.");
+        }
     }
 
     @Override
@@ -22,7 +32,7 @@ public class File implements Component{
 
     @Override
     public int getCount() {
-        // A file does not have any children, so its count is always 1
+//        Since a file does not contain any files(children), count will always be 1
         return 1;
     }
 
@@ -33,8 +43,8 @@ public class File implements Component{
 
     @Override
     public Component search(String name) {
-        // A file does not have any children, so it cannot contain another file
+//        Since a file does not contain any files(children), return null
         return null;
-    }
+    }    
 
 }
