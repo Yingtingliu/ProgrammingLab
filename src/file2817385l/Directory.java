@@ -18,10 +18,9 @@ public class Directory implements Component {
         this.children = new ArrayList<Component>();
         this.name = name;
     }
-
    
     public String getName() {
-        return name;
+        return this.name;
     }
     
     // Composites normally delegate the methods to the leaves
@@ -47,8 +46,9 @@ public class Directory implements Component {
     public String display(String prefix) {
         StringBuilder sb = new StringBuilder();
         sb.append(prefix).append(name).append(": (count=").append(getCount()).append(", size=").append(getSize()).append(")\n");
+        
         for (Component child : children) {
-            sb.append(child.display(prefix + "\t")).append("\n");
+            sb.append(child.display(prefix + "\t"));           
         }
         return sb.toString();
     }
@@ -56,8 +56,9 @@ public class Directory implements Component {
     
     public Component search(String name) {
         for (Component child : children) {
-            if (child.getName().equals(name)) {
-                return child;
+            if (child instanceof File && child.getName().equals(name)) {
+            	// return this object (dictionary)
+                return this;
             }
             Component result = child.search(name);
             if (result != null) {

@@ -104,7 +104,7 @@ public class MyTestFile {
 	    directory1.add(file5);
 
 	    Component result1 = directory1.search("testFile1");
-	    if(result1 != null && result1.getName().equals("testFile1")) {
+	    if(result1 != null && result1.getName().equals("testDirectory")) {
 	        System.out.println("Test case 1: PASSED");
 	    } else {
 	        System.out.println("Test case 1: FAILED");
@@ -130,7 +130,7 @@ public class MyTestFile {
 	    directory3.add(directory2);
 
 	    Component result3 = directory3.search("testFile1");
-	    if(result3 != null && result3.getName().equals("testFile1")) {
+	    if(result3 != null && result3.getName().equals("nestedDirectory1")) {
 	        System.out.println("Test case 3: PASSED");
 	    } else {
 	        System.out.println("Test case 3: FAILED");

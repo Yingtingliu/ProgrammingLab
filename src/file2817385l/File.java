@@ -38,7 +38,7 @@ public class File implements Component{
 
     @Override
     public String display(String prefix) {
-        return prefix + name + " (" + size + ")";
+        return prefix + name + " (" + size + ")" +"\n";
     }
 
     @Override
