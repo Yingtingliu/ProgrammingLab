@@ -3,6 +3,7 @@ package file2817385l;
 public class MyTest3 {
 	
 	public static void main(String[] args) {
+		
 	  Directory dic1 = new Directory("dic1");
 	  Directory dic2 = new Directory("dic2");
 	  Directory dic3 = new Directory("dic3");

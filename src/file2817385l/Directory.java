@@ -53,17 +53,16 @@ public class Directory implements Component {
         if (level != 0) {
             sb.append(prefix);
         }
-        sb.append(name).append(": (count=").append(getCount()).append(", size=").append(getSize()).append(")\n");
-
+        sb.append(name).append(": (count=").append(getCount()).append(", size=").append(getSize()).append(")");
         for (Component child : children) {
             if (child instanceof File) {
                 level++;
-                sb.append(prefix.repeat(level - 1)).append(child.display(prefix));
-                sb.append("\n");
+//                sb.append(prefix.repeat(level - 1)).append(child.display(prefix));
+                sb.append("\n").append(prefix.repeat(level-1)).append(child.display(prefix));
                 level--;
             } else if (child instanceof Directory) {
                 level++;
-                sb.append(prefix.repeat(level - 1)).append(child.display(prefix));
+                sb.append("\n").append(prefix.repeat(level-1)).append(child.display(prefix));
                 level--;
             }
         }
