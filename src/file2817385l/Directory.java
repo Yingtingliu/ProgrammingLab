@@ -1,4 +1,5 @@
 /* 
+ * note: String repeat() method can will only work on Java 11 or later version.
  * This is a file system design using Composite Pattern.
  * This is a Composite class, using a dictionary to store multiple files.
  * */
@@ -44,68 +45,32 @@ public class Directory implements Component {
         return count;
     }
 
-    
-    public String display1(String prefix) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(prefix).append(name).append(": (count=").append(getCount()).append(", size=").append(getSize()).append(")\n");
-        
-        for (Component child : children) {
-            sb.append(child.display(prefix + "\t"));           
-        }
-        return sb.toString();
-    }
-    
-    
  // this is the level of dictionary
     private static int level =0;
-    
-     
-//    public String display(String prefix) {
-//        StringBuilder sb = new StringBuilder();
-//        if (level != 0) {
-//            sb.append("\n" + prefix);
-//        }
-//        sb.append(name).append(": (count=").append(getCount()).append(", size=").append(getSize()).append(")");
-//        level++;
-//        String repeatPrefix = prefix.repeat(level);
-//        for (Component child : children) {
-//            if (child instanceof File) {            	
-//            	sb.append(child.display(repeatPrefix));            	
-//            } else if (child instanceof Directory) {
-//                sb.append(child.display(prefix.repeat(level)));  
-//                level++;
-//            }
-//            
-//        }
-////        level++;
-////        level--;
-//        level = 0;
-//        return sb.toString();        
-//    }    
     @Override
     public String display(String prefix) {
         StringBuilder sb = new StringBuilder();
         if (level != 0) {
-            sb.append("\n" + prefix);
+            sb.append(prefix);
         }
-        sb.append(name).append(": (count=").append(getCount()).append(", size=").append(getSize()).append(")");
-        String repeatPrefix = prefix.repeat(level + 1);
+        sb.append(name).append(": (count=").append(getCount()).append(", size=").append(getSize()).append(")\n");
+
         for (Component child : children) {
             if (child instanceof File) {
                 level++;
-                sb.append(child.display(repeatPrefix));
+                sb.append(prefix.repeat(level - 1)).append(child.display(prefix));
+                sb.append("\n");
                 level--;
             } else if (child instanceof Directory) {
                 level++;
-                sb.append(child.display(repeatPrefix));
+                sb.append(prefix.repeat(level - 1)).append(child.display(prefix));
                 level--;
             }
         }
         return sb.toString();
     }
-   
-  
-    
+
+    @Override
     public Component search(String name) {
         for (Component child : children) {
             if (child instanceof File && child.getName().equals(name)) {
@@ -135,10 +100,16 @@ public class Directory implements Component {
     }
 
     public void remove(Component component) {
-    	if (!children.contains(component)) {
-    		throw new IllegalArgumentException("Error: file not found in directory");
-        } else {
-        	children.remove(component);
-        }        
+
+        for (Component child : children) {
+            if (child.equals(component)) {
+                children.remove(child);
+                return;
+            }
+            if (child instanceof Directory) {
+                ((Directory) child).remove(component);
+            }
+        }
+
     }
 }
