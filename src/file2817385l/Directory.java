@@ -45,7 +45,7 @@ public class Directory implements Component {
         return count;
     }
 
- // this is the level of dictionary
+    // this is the level of dictionary
     private static int level =0;
     @Override
     public String display(String prefix) {
