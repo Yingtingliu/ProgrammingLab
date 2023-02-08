@@ -28,7 +28,7 @@ public class MyTest2 {
 		
 		System.out.println(root.display("\t"));
 
-		System.out.println( root.search("wallpaper").getName() );
+//		System.out.println( root.search("wallpaper").getName() );
 
 	}
 

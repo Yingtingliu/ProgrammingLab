@@ -136,6 +136,13 @@ public class MyTestFile {
 	        System.out.println("Test case 3: FAILED");
 	    }
 	    
+	    Component result4 = directory3.search("nestedDirectory1");
+	    if(result4 == null ) {
+	        System.out.println("Test case 4: PASSED");
+	    } else {
+	        System.out.println("Test case 4: FAILED");
+	    }
+	    
 	}
 
 }
