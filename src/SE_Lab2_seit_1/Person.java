@@ -9,22 +9,30 @@ public class Person {
 	    type = person_type;
 		boss = null;
 		nworkers = 0;
-		
-		if(type == 1) // 1 = Boss
-			worker = new Person[max_nworkers];
-		else
-			worker = null;
 	}
-
+	
+	// only if type == 1, 1 = Boss
+	public void addWorkers() {		
+		if(type == 1) // 1 = Boss
+			worker = new Person[max_nworkers];		
+	}
+	
 	public	void print(PrintStream ps)	{
 		ps.print(String.format("%s: born on %02d/%02d/%4d", name, birth_date.get_dob_day(), birth_date.get_dob_month(), birth_date.get_dob_year()));
+	}
+
+	public	void printBoss(PrintStream ps)	{
+		print(ps);
 		if (type == 1)	{
 			ps.print(" bosses: ");
 			for (int i = 0; i < nworkers; i++)
 				ps.print(worker[i].name+" ");
-		}
-		else
-			ps.print(" is bossed by "+boss.name);
+		} 
+	}
+	
+	public	void printWorker(PrintStream ps)	{
+		print(ps);
+		ps.print(" is bossed by "+boss.name);
 	}
 	
 	public void setBoss(Person person_boss) {
