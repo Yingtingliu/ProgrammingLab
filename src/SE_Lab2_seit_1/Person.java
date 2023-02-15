@@ -11,6 +11,7 @@ public class Person {
 		nworkers = 0;
 	}
 	
+	// !!!! move workers to boss class
 	// only if type == 1, 1 = Boss
 	public void addWorkers() {		
 		if(type == 1) // 1 = Boss

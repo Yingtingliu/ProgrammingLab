@@ -7,7 +7,7 @@ import java.io.OutputStream;
 import java.rmi.Naming;
 
 public class PasswordClient {
-    private static String host = "rmi://localhost"; // "//localhost" "//stlinux02.dcs.gla.ac.uk/"
+    private static String host = "//stlinux02.dcs.gla.ac.uk/"; // "rmi://localhost" "//stlinux02.dcs.gla.ac.uk/"
     private static String serviceName = "UnsecurePasswordServer";
 
     public static void writeBytesToFile(byte[] bytes, OutputStream out){
