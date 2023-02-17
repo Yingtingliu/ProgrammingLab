@@ -19,8 +19,6 @@ public class MyThreadImpl implements Runnable{
 			System.out.println(
 		            "Current Thread Name: "
 		            + Thread.currentThread().getName());
-		        
-		        // gets the ID of the current thread
 		        System.out.println(
 		            "Current Thread ID: "
 		            + Thread.currentThread().getId());
