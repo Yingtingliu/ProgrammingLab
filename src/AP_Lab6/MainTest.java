@@ -55,6 +55,28 @@ public class MainTest {
 //        }
 //    }
 	
+	@Test
+    public void testMultipleThreads3() {
+		
+		int nThreads = 2;
+		Thread[] threads = new Thread[nThreads];
+		for(int i=0;i<nThreads;i++) {
+			threads[i].setName("Thread"+Integer.toString(nThreads));
+		}
+		
+        for (int j=0;j<nThreads;j++) {
+        	threads[j].start();
+        }
+        
+        try {
+        	for (int k=0;k<nThreads;k++) {
+            	threads[k].join();
+            }            
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+	
 	/*
 	 * If you call Thread.yield() in the main method, 
 	 * it will cause the main thread to yield the processor to other threads 
@@ -69,20 +91,21 @@ public class MainTest {
 	 * 
 	 * */
 	
-	@Test
-	public void testSequenceOfConcurrency() {
-		MyThreadImpl myRunnable1 = new MyThreadImpl();
-		MyThreadImpl myRunnable2 = new MyThreadImpl();
-		MyThreadImpl myRunnable3 = new MyThreadImpl();
-        Thread thread1 = new Thread(myRunnable1,"run1");
-        Thread thread2 = new Thread(myRunnable2,"run2");
-        Thread thread3 = new Thread(myRunnable3,"run3");
-        thread1.start();
-        thread2.start();
-        thread3.start();
-        Thread.yield(); // wait for word to finish      
-        System.out.println("start all");       
-         
-	}
+//	@Test
+//	public void testSequenceOfConcurrency() {
+//		
+//		MyThreadImpl myRunnable1 = new MyThreadImpl();
+//		MyThreadImpl myRunnable2 = new MyThreadImpl();
+//		MyThreadImpl myRunnable3 = new MyThreadImpl();
+//        Thread thread1 = new Thread(myRunnable1,"run1");
+//        Thread thread2 = new Thread(myRunnable2,"run2");
+//        Thread thread3 = new Thread(myRunnable3,"run3");
+//        thread1.start();
+//        thread2.start();
+//        thread3.start();
+//        Thread.yield(); // wait for word to finish      
+//        System.out.println("start all");       
+//         
+//	}
 
 }
