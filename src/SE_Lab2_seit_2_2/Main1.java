@@ -1,4 +1,4 @@
-package SE_Lab2_2;
+package SE_Lab2_seit_2_2;
 public class Main1 {
 
 	public static void main(String[] args)	{
