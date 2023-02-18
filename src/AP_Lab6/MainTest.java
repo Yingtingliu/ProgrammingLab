@@ -59,10 +59,14 @@ public class MainTest {
     public void testMultipleThreads3() {
 		
 		int nThreads = 2;
+		MyThreadImpl[] myThreads = new MyThreadImpl[nThreads];
 		Thread[] threads = new Thread[nThreads];
-		for(int i=0;i<nThreads;i++) {
-			threads[i].setName("Thread"+Integer.toString(nThreads));
-		}
+		
+		for (int i = 0; i < nThreads; i++) {
+	        myThreads[i] = new MyThreadImpl();
+	        threads[i] = new Thread(myThreads[i]);
+	        threads[i].setName("Thread" + Integer.toString(i));
+	    }
 		
         for (int j=0;j<nThreads;j++) {
         	threads[j].start();

@@ -5,30 +5,48 @@ public class MaxFinder {
 	int nRows = 100;
 	int nCols = 50;	
 	
-	Double[][] randArray = new Double[nRows][nCols];
-	public void createArray() {
+	
+	public Double[][] createArray() {
+		Double[][] randArray = new Double[nRows][nCols];
 		for(int r=0;r<nRows;r++) {
 			for(int c=0;c<nCols;c++) {
 				randArray[r][c] = Math.random();
 			}
 		}
+		return randArray;
 	}
 	
 	
-	Double max = randArray[0][0];
 	
-	
-	public Double findMax() {		
-		
-		for(int i = 0; i<this.nRows;i++) {
-			for(int j = 0; j<this.nCols;j++) {				
-				
-				if(randArray[i][j]>max) {
-					max=randArray[i][j];
-				}
-			}
-		}
-		return max;
+	public int getnRows() {
+		return nRows;
 	}
+
+	public void setnRows(int nRows) {
+		this.nRows = nRows;
+	}
+
+	public int getnCols() {
+		return nCols;
+	}
+
+	public void setnCols(int nCols) {
+		this.nCols = nCols;
+	}
+
+
+
+//	public Double findMax(Double[][] array) {		
+//		Double max = array[0][0];
+//		for(int i = 0; i<this.nRows;i++) {
+//			for(int j = 0; j<this.nCols;j++) {				
+//				
+//				if(array[i][j]>max) {
+//					max=array[i][j];
+//				}
+//			}
+//		}
+//		return max;
+//	}
 
 }
