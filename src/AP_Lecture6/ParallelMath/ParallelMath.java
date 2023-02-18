@@ -42,6 +42,7 @@ public class ParallelMath {
         final int numThreads = 4;
         final int countPerThread = numInputs / numThreads;
         assert numInputs % numThreads == 0;  // the number of threads must exactly divide the number of inputs
+        
         final Thread[] threads = new Thread[numThreads];
         for (int threadIndex = 0; threadIndex < numThreads; ++threadIndex) {
             final int firstIndex = threadIndex * countPerThread;
