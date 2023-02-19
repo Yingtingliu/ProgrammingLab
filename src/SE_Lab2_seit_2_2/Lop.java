@@ -1,5 +1,6 @@
 package SE_Lab2_seit_2_2;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class Lop {
 		 while(iterator.hasNext()) {			 
 			try {
 				Person person = iterator.next();
-				PrintStream ps = new PrintStream("out2");
+				PrintStream ps = new PrintStream(new File("outputLop.txt"));
 				person.print(ps);
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();

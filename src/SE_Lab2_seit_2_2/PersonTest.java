@@ -1,5 +1,6 @@
 package SE_Lab2_seit_2_2;
 
+import java.io.File;
 import java.io.PrintStream;
 
 import org.junit.Test;
@@ -11,7 +12,7 @@ public class PersonTest {
 		Date date = new Date(23, 01, 1998);
 		Person person = new Person("John", date);
 		try {
-			PrintStream pStream = new PrintStream("out");
+			PrintStream pStream = new PrintStream(new File("output.txt"));
 			person.print(pStream);
 			System.out.println(person.getName().toString());
 			System.out.println(person.getAge(2023));
