@@ -6,4 +6,6 @@ public class Student {
 	String name;
 	short age;
 	float grade;
+	
+	
 }
