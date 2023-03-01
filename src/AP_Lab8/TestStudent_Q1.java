@@ -1,5 +1,7 @@
 package AP_Lab8;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,7 +18,7 @@ public class TestStudent_Q1 {
 	}
 
 	public void csvWriter() {
-		try (FileWriter fw = new FileWriter("D:\\Glasgow study\\Semester 2\\Adv programming\\students_read.csv")) {
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter("D:\\Glasgow study\\Semester 2\\Adv programming\\students_read.csv"))) {
 			Student[] students = new Student().generate();
 			StringBuilder sb = new StringBuilder();
 			sb.append("Roll Number,Name,Age,Grade\n");
@@ -26,7 +28,7 @@ public class TestStudent_Q1 {
 				sb.append(student.getAge()).append(",");
 				sb.append(student.getGrade()).append("\n");
 			}
-			fw.write(sb.toString());
+			bw.write(sb.toString());
 			System.out.println("CSV file has been created!");
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -34,9 +36,9 @@ public class TestStudent_Q1 {
 	}
 
 	public void csvReader() {
-		try (FileReader fw = new FileReader("D:\\Glasgow study\\Semester 2\\Adv programming\\students_read.csv")) {
+		try (BufferedReader br = new BufferedReader(new FileReader("D:\\Glasgow study\\Semester 2\\Adv programming\\students_read.csv"))) {
 
-			Scanner myReader = new Scanner(fw);
+			Scanner myReader = new Scanner(br);
 			Student[] students = new Student[10000];
 			int i = 0;
 			

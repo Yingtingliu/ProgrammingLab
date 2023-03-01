@@ -1,8 +1,11 @@
 package AP_Lab8;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Student2 {	
+public class Student2 implements Serializable{	
+	
+	private static final long serialVersionUID = 1L;
 	
 	int rollNumber;
 	String name;
