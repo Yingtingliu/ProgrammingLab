@@ -38,4 +38,10 @@ public class SlowCalculator implements Runnable {
         }
         return true;
     }
+
+	public long getN() {
+		return N;
+	}
+    
+    
 }
