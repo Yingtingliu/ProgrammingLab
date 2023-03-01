@@ -2,16 +2,16 @@ package AP_Lab8;
 
 import java.util.Random;
 
-public class Student {	
+public class Student2 {	
 	
 	int rollNumber;
 	String name;
 	short age;
 	float grade;
 	
-	public Student() {}
+	public Student2() {}
 	
-	public Student(int rollNumber, String name, short age, float grade) {
+	public Student2(int rollNumber, String name, short age, float grade) {
         this.rollNumber = rollNumber;
         this.name = name;
         this.age = age;
@@ -43,13 +43,13 @@ public class Student {
 		this.grade = grade;
 	}	
 	
-	public Student[] generate() {
+	public Student2[] generate() {
         final int studentNum = 10000;
         final int min = 10; // Minimum value of range
         final int max = 100; // Maximum value of range
         String alphaStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvxyz";
 
-        Student[] students = new Student[studentNum];
+        Student2[] students = new Student2[studentNum];
 
         for (int i = 0; i < studentNum; i++) {
             Random random = new Random();
@@ -57,7 +57,7 @@ public class Student {
             short age = (short) Math.floor(Math.random() * (max - min + 1) + min);
             float grade = (float) Math.floor(Math.random() * (max - min + 1) + min);
 
-            Student student = new Student(i, randomName, age, grade);
+            Student2 student = new Student2(i, randomName, age, grade);
 
             students[i] = student;
         }
