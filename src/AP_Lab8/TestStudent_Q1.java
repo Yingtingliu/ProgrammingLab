@@ -7,7 +7,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/*
+ * Separate read file and write file methods
+ */
+
 public class TestStudent_Q1 {
+	
+	public final String readFilepath ="D:\\Glasgow study\\Semester 2\\Adv programming\\students_read.csv";
+	public final String writeFilepath ="D:\\Glasgow study\\Semester 2\\Adv programming\\students_read.csv";
 
 	public static void main(String[] args) {
 		
@@ -16,27 +23,31 @@ public class TestStudent_Q1 {
 		testStudentMain.csvReader();
 
 	}
-
+	
+	// this is the writer
 	public void csvWriter() {
-		try (BufferedWriter bw = new BufferedWriter(new FileWriter("D:\\Glasgow study\\Semester 2\\Adv programming\\students_read.csv"))) {
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(readFilepath))) {
 			Student[] students = new Student().generate();
 			StringBuilder sb = new StringBuilder();
-			sb.append("Roll Number,Name,Age,Grade\n");
+			
 			for (Student student : students) {
 				sb.append(student.getRollNumber()).append(",");
 				sb.append(student.getName()).append(",");
 				sb.append(student.getAge()).append(",");
 				sb.append(student.getGrade()).append("\n");
 			}
+			
 			bw.write(sb.toString());
+			
 			System.out.println("CSV file has been created!");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-
+	
+	// this is the reader
 	public void csvReader() {
-		try (BufferedReader br = new BufferedReader(new FileReader("D:\\Glasgow study\\Semester 2\\Adv programming\\students_read.csv"))) {
+		try (BufferedReader br = new BufferedReader(new FileReader(writeFilepath))) {
 
 			Scanner myReader = new Scanner(br);
 			Student[] students = new Student[10000];
