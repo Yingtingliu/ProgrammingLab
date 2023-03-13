@@ -114,8 +114,7 @@ public class Solution implements CommandRunner {
         }
     }
     
-    public String start(Long num) {
-    	
+    private String start(Long num) {    	
     	
         SlowCalculator task = new SlowCalculator(num);
         tasks.add(task);
@@ -132,5 +131,7 @@ public class Solution implements CommandRunner {
         
         return "Started " + Long.toString(num);
     }
+    
+    
 
 }
