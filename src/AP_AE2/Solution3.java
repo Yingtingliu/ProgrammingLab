@@ -31,20 +31,20 @@ public class Solution3 implements CommandRunner {
                     for (int i = 0; i < tasks.size(); i++) {
                         SlowCalculator calculator = tasks.get(i);
                         Thread thread = threads.get(i);
-                        if (calculator.getInput() == input && !calculator.isFinished()) {
-                            calculator.cancel();
-                            return "Cancelled " + input;
-                        }
+//                        if (calculator.getInput() == input && !calculator.isFinished()) {
+//                            calculator.cancel();
+//                            return "Cancelled " + input;
+//                        }
                     }
                 } else if (words[0].equals("get")) {
                     for (SlowCalculator calculator : tasks) {
-                        if (calculator.getInput() == input) {
-                            if (calculator.isFinished()) {
-                                return "result is " + calculator.getResult();
-                            } else {
-                                return "calculating";
-                            }
-                        }
+//                        if (calculator.getInput() == input) {
+//                            if (calculator.isFinished()) {
+//                                return "result is " + calculator.getResult();
+//                            } else {
+//                                return "calculating";
+//                            }
+//                        }
                     }
                 }
             } catch (NumberFormatException e) {
@@ -56,11 +56,11 @@ public class Solution3 implements CommandRunner {
             if (words[0].equals("running")) {
                 List<Long> inputs = new ArrayList<>();
                 for (SlowCalculator calculator : tasks) {
-                    if (!calculator.isFinished()) {
-                        inputs.add(calculator.getInput());
-                    }
+//                    if (!calculator.isFinished()) {
+//                        inputs.add(calculator.getInput());
+//                    }
                 }
-                return inputs.size() + " calculations running: " + String.join(" ", inputs);
+//                return inputs.size() + " calculations running: " + String.join(" ", inputs);
             } else if (words[0].equals("finish")) {
                 for (Thread thread : threads) {
                     try {
@@ -72,7 +72,7 @@ public class Solution3 implements CommandRunner {
                 return "Finished";
             } else if (words[0].equals("abort")) {
                 for (SlowCalculator calculator : tasks) {
-                    calculator.cancel();
+//                    calculator.cancel();
                 }
                 for (Thread thread : threads) {
                     thread.interrupt();

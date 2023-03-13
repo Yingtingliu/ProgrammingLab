@@ -3,15 +3,21 @@ package AP_AE2;
 public class SlowCalculator implements Runnable {
 
     private final long N;
+    private int result;
+    private boolean complete;
 
     public SlowCalculator(final long N) {
         this.N = N;
+        this.result = 0;
+        this.complete = false;
     }
 
     public void run() {
         final int result = calculate(N);
-        System.out.println(result);  // you'll be changing this
-    }
+        this.result = result; 
+        this.complete = true;
+    }  
+    
 
     private static int calculate(final long N) {
         // This (very inefficiently) finds and returns the number of unique prime factors of |N|
@@ -43,5 +49,11 @@ public class SlowCalculator implements Runnable {
 		return N;
 	}
     
+	public int getResult() {
+    	return result;
+    }
     
+	public boolean isComplete() {
+        return this.complete;
+    }
 }
