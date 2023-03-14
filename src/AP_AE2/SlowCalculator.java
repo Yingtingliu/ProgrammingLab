@@ -13,18 +13,25 @@ public class SlowCalculator implements Runnable {
     }
 
     public void run() {
-        final int result = calculate(N);
-        this.result = result; 
-        this.complete = true;
+    	try {
+            final int result = calculate(N);
+            this.result = result; 
+            this.complete = true;
+        } catch (InterruptedException e) {            
+            this.complete = false;
+        }
     }  
     
 
-    private static int calculate(final long N) {
+    private static int calculate(final long N) throws InterruptedException {
         // This (very inefficiently) finds and returns the number of unique prime factors of |N|
         // You don't need to think about the mathematical details; what's important is that it does some slow calculation taking N as input
         // You should not modify the calculation performed by this class, but you may want to add support for interruption
         int count = 0;
         for (long candidate = 2; candidate < N; ++candidate) {
+        	if (Thread.interrupted()) { // Check if interrupted, and set the flag
+                throw new InterruptedException(); // Throw InterruptedException if interrupted
+            }
             if (isPrime(candidate)) {
                 if (Math.abs(N) % candidate == 0) {
                     count++;

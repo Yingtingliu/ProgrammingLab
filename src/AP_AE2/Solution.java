@@ -156,13 +156,6 @@ public class Solution implements CommandRunner {
 			}
 
 		}
-
-		for (SlowCalculator t : tasks) {			
-			if (!t.isComplete()) {
-				return "fail to Finished!";
-			}
-		}
-
 		return "Finished";
 	}
 
