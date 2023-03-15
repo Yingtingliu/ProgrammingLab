@@ -2,7 +2,7 @@ package AP_Lecture10;
 
 public class MyClass {
 	
-	int doSlowThing() {
+	public int doSlowThing() {
 		 // do something slow!
 		return 0;
 	}
