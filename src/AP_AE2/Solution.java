@@ -99,6 +99,8 @@ public class Solution implements CommandRunner {
 					tasks.remove(i);
 					threads.remove(i);
 					return "Cancelled " + num;
+				} else if(t.isComplete()) {
+					return "";
 				} else {
 					return "Invalid command";
 				}
@@ -108,6 +110,7 @@ public class Solution implements CommandRunner {
 		return "Invalid command";
 
 	}
+	
 
 	private String running() {
 		int count = 0;
