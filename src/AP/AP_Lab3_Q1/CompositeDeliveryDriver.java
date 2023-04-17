@@ -1,8 +1,8 @@
 package AP.AP_Lab3_Q1;
 
-import AP_Lab3.CompositeShop.ShopComponent;
-import AP_Lab3.CompositeShop.ShopComposite;
-import AP_Lab3.CompositeShop.ShopLeaf;
+import AP.AP_Lab3.CompositeShop.ShopComponent;
+import AP.AP_Lab3.CompositeShop.ShopComposite;
+import AP.AP_Lab3.CompositeShop.ShopLeaf;
 
 public class CompositeDeliveryDriver {
 	public static void displayDelivery(ShopComponent c) {		

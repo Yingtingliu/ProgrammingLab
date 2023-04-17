@@ -1,6 +1,6 @@
 package Prog.Lab5_ExceptionAndIO.Bank2;
 
-import Lab5_ExceptionAndIO.OverdraftException;
+//import Prog.Lab5_ExceptionAndIO.OverdraftException;
 
 public class BankAccountPerson {
 	private Person customer;
@@ -23,16 +23,16 @@ public class BankAccountPerson {
 	public void deposit(double amount) {
 		balance += amount;
 	}
-	public void withdraw(double amount) throws OverdraftException {
-		balance -= amount;
-	}
+//	public void withdraw(double amount) throws OverdraftException {
+//		balance -= amount;
+//	}
 	public double getBalance() {
 		return balance;
 	}
 	// Exercise 2.10
-	public void transferFunds(BankAccountPerson other, double amount) throws OverdraftException {
-		// transfers amount from other to this account
-		other.withdraw(amount);
-		deposit(amount); // neater to use this than manipulate balance directly
-	}
+//	public void transferFunds(BankAccountPerson other, double amount) throws OverdraftException {
+//		// transfers amount from other to this account
+//		other.withdraw(amount);
+//		deposit(amount); // neater to use this than manipulate balance directly
+//	}
 }

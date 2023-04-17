@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-import week5_Exceptions_FileIO.Student;
+import Prog.week5_Exceptions_FileIO.Student;
 
 public class FileIO_Q1 {
 

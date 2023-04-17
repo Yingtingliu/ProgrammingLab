@@ -4,7 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import DSA_Ch7_lecture.ArrayQueue;
+import DSA.DSA_Ch7_lecture.ArrayQueue;
 
 public class ArrayQueueTest {
 	

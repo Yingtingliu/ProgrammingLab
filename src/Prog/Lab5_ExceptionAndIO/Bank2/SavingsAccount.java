@@ -1,6 +1,6 @@
 package Prog.Lab5_ExceptionAndIO.Bank2;
 
-import Lab5_ExceptionAndIO.OverdraftException;
+import Prog.Lab5_ExceptionAndIO.OverdraftException;
 
 public class SavingsAccount extends BankAccountPerson{
 	private double ir; //interest rate

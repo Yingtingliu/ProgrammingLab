@@ -2,7 +2,7 @@ package AP.AP_Lab6;
 
 import org.junit.Test;
 
-import AP_Lab1.test;
+import AP.AP_Lab1.test;
 
 public class MainTest {
 	

@@ -1,6 +1,6 @@
 package Prog.Lab5_ExceptionAndIO.Bank;
 
-import Lab5_ExceptionAndIO.OverdraftException;
+import Prog.Lab5_ExceptionAndIO.OverdraftException;
 
 public class BankAccount {
 	

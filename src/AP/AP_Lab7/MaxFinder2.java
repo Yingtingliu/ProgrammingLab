@@ -1,7 +1,7 @@
 package AP.AP_Lab7;
 
-import AP_Lab7_Solusion_MaxFinder.SharedDouble;
-import AP_Lab7_Solusion_MaxFinder.MaxFinder2.MaxRow;
+import AP.AP_Lab7_Solusion_MaxFinder.SharedDouble;
+import AP.AP_Lab7_Solusion_MaxFinder.MaxFinder2.MaxRow;
 
 public class MaxFinder2 {
 	
